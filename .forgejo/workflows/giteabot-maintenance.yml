@@ -33,7 +33,7 @@ jobs:
           GITEABOT_FEATURE_FEEDBACK: "true"
           GITEABOT_LABEL_NEEDS_FEEDBACK: "issue/needs-feedback"
         run: |
-          git clone https://github.com/go-gitea/giteabot /tmp/giteabot
+          git clone https://feicode.com/feiCode/giteabot.git /tmp/giteabot
           cd /tmp/giteabot
           git checkout 9beb4bd4902e657061484a5b5012e9bd0b27a794
           go run .
