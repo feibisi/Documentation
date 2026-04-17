@@ -28,6 +28,8 @@ jobs:
 
       - name: Run giteabot event mode
         env:
+          USER: root
+          HOME: /root
           GOPROXY: https://goproxy.cn,direct
           GOSUMDB: sum.golang.org
           CGO_ENABLED: "0"
