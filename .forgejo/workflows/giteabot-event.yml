@@ -32,7 +32,6 @@ jobs:
           HOME: /root
           GOPROXY: https://goproxy.cn,direct
           GOSUMDB: sum.golang.org
-          CGO_ENABLED: "0"
           GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
           GITEABOT_REPO: ${{ github.repository }}
           GITEABOT_PROVIDER: gitea
