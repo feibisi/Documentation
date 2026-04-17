@@ -7,10 +7,8 @@ jobs:
   giteabot-maintenance:
     runs-on: ubuntu-latest
     container:
-      image: golang:1.26-alpine
+      image: golang:1.26
     steps:
-      - name: Install git
-        run: apk add --no-cache git ca-certificates
 
       - name: Checkout
         uses: https://code.forgejo.org/actions/checkout@v4
