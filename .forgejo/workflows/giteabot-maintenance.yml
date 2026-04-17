@@ -10,8 +10,6 @@ jobs:
       image: golang:1.26
     steps:
 
-      - name: Checkout
-        uses: https://code.forgejo.org/actions/checkout@v4
 
       - name: Run giteabot maintenance mode
         env:
