@@ -21,7 +21,7 @@ jobs:
           GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
           GITEABOT_REPO: ${{ github.repository }}
           GITEABOT_PROVIDER: gitea
-          GITEABOT_API_BASE: ${{ github.server_url }}/api/v1
+          GITEABOT_API_BASE: ${{ github.server_url }}
           GITEABOT_MODE: maintenance
           GITEABOT_FEATURE_BACKPORT: "false"
           GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"

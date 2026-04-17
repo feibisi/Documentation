@@ -36,7 +36,7 @@ jobs:
           GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
           GITEABOT_REPO: ${{ github.repository }}
           GITEABOT_PROVIDER: gitea
-          GITEABOT_API_BASE: ${{ github.server_url }}/api/v1
+          GITEABOT_API_BASE: ${{ github.server_url }}
           GITEABOT_MODE: event
           GITEABOT_EVENT_PATH: ${{ github.event_path }}
           GITEABOT_EVENT_NAME: ${{ github.event_name }}
