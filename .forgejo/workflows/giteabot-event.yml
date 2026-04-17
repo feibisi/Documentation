@@ -38,7 +38,7 @@ jobs:
           GITEABOT_API_BASE: ${{ github.server_url }}
           GITEABOT_MODE: event
           GITEABOT_EVENT_PATH: ${{ github.event_path }}
-          GITEABOT_EVENT_NAME: ${{ github.event_name }}
+          GITEABOT_EVENT_NAME: pull_request
           GITEABOT_FEATURE_BACKPORT: "false"
           GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"
           GITEABOT_FEATURE_MERGE_QUEUE: "false"
