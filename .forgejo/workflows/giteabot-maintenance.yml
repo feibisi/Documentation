@@ -1,0 +1,29 @@
+name: giteabot maintenance 试点
+
+on:
+  workflow_dispatch:
+
+jobs:
+  giteabot-maintenance:
+    runs-on: docker
+    steps:
+      - name: Run giteabot maintenance mode
+        uses: https://github.com/go-gitea/giteabot@9beb4bd4902e657061484a5b5012e9bd0b27a794
+        with:
+          token: ${{ secrets.FORGEJO_TOKEN }}
+          repo: ${{ github.repository }}
+          provider: gitea
+          api_base: ${{ github.server_url }}/api/v1
+          mode: maintenance
+        env:
+          GITEABOT_FEATURE_BACKPORT: "false"
+          GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"
+          GITEABOT_FEATURE_MERGE_QUEUE: "false"
+          GITEABOT_FEATURE_MILESTONES: "false"
+          GITEABOT_FEATURE_COMMENTS: "false"
+          GITEABOT_FEATURE_LAST_CALL: "false"
+          GITEABOT_FEATURE_LGTM: "false"
+          GITEABOT_FEATURE_PR_ACTIONS: "false"
+          GITEABOT_FEATURE_LOCKING: "true"
+          GITEABOT_FEATURE_FEEDBACK: "true"
+          GITEABOT_LABEL_NEEDS_FEEDBACK: "issue/needs-feedback"
