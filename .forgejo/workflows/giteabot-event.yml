@@ -53,6 +53,8 @@ jobs:
           GITEABOT_LABEL_LGTM_PREFIX: "lgtm/"
         run: |
           export USER=root HOME=/root
+          echo token-len=$(printf %s "$GITEABOT_TOKEN" | wc -c)
+          echo event-name=$GITEABOT_EVENT_NAME
           git clone https://feicode.com/feiCode/giteabot.git /tmp/giteabot
           cd /tmp/giteabot
           git checkout 9beb4bd4902e657061484a5b5012e9bd0b27a794
