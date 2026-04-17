@@ -5,7 +5,7 @@ on:
 
 jobs:
   giteabot-maintenance:
-    runs-on: docker
+    runs-on: ubuntu-latest
     steps:
       - name: Run giteabot maintenance mode
         uses: https://github.com/go-gitea/giteabot@9beb4bd4902e657061484a5b5012e9bd0b27a794
