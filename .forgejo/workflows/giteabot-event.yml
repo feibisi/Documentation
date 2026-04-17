@@ -21,18 +21,27 @@ on:
 jobs:
   giteabot:
     runs-on: ubuntu-latest
+    container:
+      image: golang:1.26-alpine
     steps:
+      - name: Install git
+        run: apk add --no-cache git ca-certificates
+
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@v4
+
       - name: Run giteabot event mode
-        uses: https://github.com/go-gitea/giteabot@9beb4bd4902e657061484a5b5012e9bd0b27a794
-        with:
-          token: ${{ secrets.FORGEJO_TOKEN }}
-          repo: ${{ github.repository }}
-          provider: gitea
-          api_base: ${{ github.server_url }}/api/v1
-          mode: event
-          event_path: ${{ github.event_path }}
-          event_name: ${{ github.event_name }}
         env:
+          GOPROXY: https://goproxy.cn,direct
+          GOSUMDB: sum.golang.org
+          CGO_ENABLED: "0"
+          GITEABOT_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          GITEABOT_REPO: ${{ github.repository }}
+          GITEABOT_PROVIDER: gitea
+          GITEABOT_API_BASE: ${{ github.server_url }}/api/v1
+          GITEABOT_MODE: event
+          GITEABOT_EVENT_PATH: ${{ github.event_path }}
+          GITEABOT_EVENT_NAME: ${{ github.event_name }}
           GITEABOT_FEATURE_BACKPORT: "false"
           GITEABOT_FEATURE_LABEL_MAINTENANCE: "false"
           GITEABOT_FEATURE_MERGE_QUEUE: "false"
@@ -45,3 +54,8 @@ jobs:
           GITEABOT_FEATURE_PR_ACTIONS: "true"
           GITEABOT_LABEL_UPDATE_BRANCH: "giteabot/update-branch"
           GITEABOT_LABEL_LGTM_PREFIX: "lgtm/"
+        run: |
+          git clone https://github.com/go-gitea/giteabot /tmp/giteabot
+          cd /tmp/giteabot
+          git checkout 9beb4bd4902e657061484a5b5012e9bd0b27a794
+          go run .
