@@ -1,0 +1,63 @@
+{
+  "book_slug": "feicode",
+  "source_repo": "feiCode/Documentation",
+  "upstream_ref": "main",
+  "actor_id": 42,
+  "chapter_priority_start": 10,
+  "chapters": [
+    {
+      "slug": "getting-started",
+      "name": "入门与连接",
+      "description": "菲码源库快速入门、公开仓库浏览与 SSH/HTTPS 接入配置。",
+      "pages": [
+        {
+          "slug": "quickstart",
+          "name": "快速开始",
+          "file": "quickstart.md",
+          "tags": [
+            { "name": "product", "value": "feicode" }
+          ]
+        },
+        {
+          "slug": "ssh-and-https",
+          "name": "SSH 与 HTTPS 配置指南",
+          "file": "ssh-and-https.md",
+          "tags": [
+            { "name": "product", "value": "feicode" }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mirrors-ci-security",
+      "name": "镜像、CI 与安全",
+      "description": "国内开源镜像使用、Forgejo Actions 流水线与账号安全规范。",
+      "pages": [
+        {
+          "slug": "mirrors",
+          "name": "国内开源镜像使用指南",
+          "file": "mirrors.md",
+          "tags": [
+            { "name": "product", "value": "feicode" }
+          ]
+        },
+        {
+          "slug": "actions",
+          "name": "Forgejo Actions 使用指南",
+          "file": "actions.md",
+          "tags": [
+            { "name": "product", "value": "feicode" }
+          ]
+        },
+        {
+          "slug": "security",
+          "name": "安全与合规指南",
+          "file": "security.md",
+          "tags": [
+            { "name": "product", "value": "feicode" }
+          ]
+        }
+      ]
+    }
+  ]
+}
